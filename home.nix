@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, homeStateVersion, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -32,7 +32,7 @@
     CLICOLOR = 1;
   };
 
-  home.stateVersion = "26.05"; # Don't change it
+  home.stateVersion = "${homeStateVersion}";
 
   programs.git.enable = true;
 
