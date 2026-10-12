@@ -23,7 +23,6 @@
       "utm"
       "virtualbox"
       "vscodium"
-      "yandex-cloud-cli"
       "zoom"
     ];
 
