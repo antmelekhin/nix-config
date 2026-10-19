@@ -4,6 +4,10 @@
   homebrew = {
     enable = true;
 
+    brews = [
+      "mas"
+    ];
+
     casks = [
       "clipy"
       "discord"
@@ -26,11 +30,14 @@
       "zoom"
     ];
 
-    global.autoUpdate = true;
+    masApps = {
+      "Numbers" = 409203825;
+      "Pages" = 409201541;
+      "Windows App" = 1295203466;
+    };
 
     onActivation = {
-      autoUpdate = true;
-      cleanup = "uninstall";
+      cleanup = "zap";
       upgrade = true;
     };
   };
