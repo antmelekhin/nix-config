@@ -1,4 +1,4 @@
-{ pkgs, systemStateVersion, username, ... }:
+{ pkgs, stateVersionDarwin, username, ... }:
 
 {
   homebrew = {
@@ -44,7 +44,7 @@
 
   system.primaryUser = "${username}";
 
-  system.stateVersion = systemStateVersion;
+  system.stateVersion = stateVersionDarwin;
 
   users.users.${username} = {
     name = "${username}";

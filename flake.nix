@@ -13,12 +13,12 @@
   outputs = { self, nixpkgs, nix-darwin, nix-homebrew, home-manager, ... }: let
     hostname = "antmelekhin-mbp";
     username = "antmelekhin";
-    homeStateVersion = "26.05";
-    systemStateVersion = 7;
+    stateVersion = "26.05";
+    stateVersionDarwin = 7;
   in {
     darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
       specialArgs = {
-        inherit systemStateVersion;
+        inherit stateVersionDarwin;
         inherit username;
       };
 
@@ -44,7 +44,7 @@
         home-manager.darwinModules.home-manager
         {
           home-manager.extraSpecialArgs = {
-            inherit homeStateVersion;
+            inherit stateVersion;
           };
 
           home-manager.useGlobalPkgs = true;
