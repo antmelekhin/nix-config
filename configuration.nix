@@ -31,13 +31,13 @@
     ];
 
     masApps = {
-      "Numbers" = 409203825;
-      "Pages" = 409201541;
+      "Numbers" = 361304891;
+      "Pages" = 361309726;
       "Windows App" = 1295203466;
     };
 
     onActivation = {
-      cleanup = "zap";
+      cleanup = "uninstall";
       upgrade = true;
     };
   };
