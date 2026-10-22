@@ -1,4 +1,4 @@
-{ config, stateVersion, pkgs, ... }:
+{ config, homebrew-brew, stateVersion, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -60,6 +60,10 @@
       ll = "ls -lh";
       la = "ls -ahl";
       gs = "git status";
+    };
+
+    siteFunctions = {
+      _brew = builtins.readFile "${homebrew-brew}/completions/zsh/_brew";
     };
   };
 

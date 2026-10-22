@@ -4,13 +4,15 @@
 
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    homebrew-brew = { url = "github:homebrew/brew"; flake = false; };
 
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nix-darwin, nix-homebrew, home-manager, ... }: let
+  outputs = { self, nixpkgs, nix-darwin, nix-homebrew, homebrew-brew, home-manager, ... }: let
     hostname = "antmelekhin-mbp";
     username = "antmelekhin";
     stateVersion = "26.05";
@@ -44,6 +46,7 @@
         home-manager.darwinModules.home-manager
         {
           home-manager.extraSpecialArgs = {
+            inherit homebrew-brew;
             inherit stateVersion;
           };
 

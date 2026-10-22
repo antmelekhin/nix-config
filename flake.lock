@@ -38,6 +38,22 @@
         "type": "github"
       }
     },
+    "homebrew-brew": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792657893,
+        "narHash": "sha256-Oopxdn8uW2sg/VgO5DX3o2WsPiIBPoMFpsvPXilIvsA=",
+        "owner": "homebrew",
+        "repo": "brew",
+        "rev": "b3ca773c7efe3b1b3c742a0360c4d2494bb38def",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "brew",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -96,6 +112,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "homebrew-brew": "homebrew-brew",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs"
