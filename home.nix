@@ -30,11 +30,39 @@
 
   home.sessionVariables = {
     CLICOLOR = 1;
+    EDITOR = "vim";
   };
 
   home.stateVersion = "${stateVersion}";
 
   programs.git.enable = true;
+
+  programs.nix-plist-manager = {
+    enable = true;
+
+    options.applications.systemSettings = {
+      appearance = {
+        accentColor = "Multicolor";
+        allowWallpaperTintingInWindows = true;
+        appearance = "Dark";
+        clickInTheScrollBarTo = "Jump to the next page";
+        liquidGlass = 0.0;
+        showScrollBars = "Automatically based on mouse or trackpad";
+        sidebarIconSize = "Medium";
+      };
+
+      desktopAndDock.dock = {
+        automaticallyHideAndShowTheDock.enabled = true;
+        dockPositionOnScreen = "Right";
+        minimizedWindowAnimation = "Genie Effect";
+        minimizeWindowsIntoApplicationIcon = true;
+        showIndicatorsForOpenApplications = true;
+        showSuggestedAndRecentAppsInDock = false;
+        size = 40;
+        windowTitleBarDoubleClickAction = "Zoom";
+      };
+    };
+  };
 
   programs.zsh = {
     enable = true;

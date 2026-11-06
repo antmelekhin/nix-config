@@ -8,11 +8,13 @@
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     homebrew-brew = { url = "github:homebrew/brew"; flake = false; };
 
+    nix-plist-manager.url = "github:sushydev/nix-plist-manager";
+
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nix-darwin, nix-homebrew, homebrew-brew, home-manager, ... }: let
+  outputs = { self, nixpkgs, nix-darwin, nix-homebrew, homebrew-brew, nix-plist-manager, home-manager, ... }: let
     hostname = "antmelekhin-mbp";
     username = "antmelekhin";
     stateVersion = "26.05";
@@ -50,6 +52,7 @@
             inherit stateVersion;
           };
 
+          home-manager.sharedModules = [ nix-plist-manager.homeManagerModules.default ];
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.${username} = import ./home.nix;

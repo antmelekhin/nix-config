@@ -42,22 +42,6 @@
     };
   };
 
-  system = {
-    defaults = {
-      NSGlobalDomain = {
-        AppleInterfaceStyle = "Dark";
-        AppleInterfaceStyleSwitchesAutomatically = false;
-      };
-
-      dock = {
-        autohide = true;
-        mineffect = "scale";
-        orientation = "right";
-        tilesize = 40;
-      };
-    };
-  };
-
   system.primaryUser = "${username}";
 
   system.stateVersion = stateVersionDarwin;
